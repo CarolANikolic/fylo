@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="data storage, computer space, computer, fylo">
     <meta description="Check out your data storage with Fylo">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <title>Fylo data storage component</title>
 </head>
 <body>
-    <section>
-        <header><img src="assets/images/logo.svg"></header>
+    <section class="first-content">
+        <header class="logo"><img src="assets/images/logo.svg"></header>
         <div class="icons">
             <img src="assets/images/icon-document.svg">
             <img src="assets/images/icon-folder.svg">
@@ -18,15 +23,15 @@
         </div>
     </section>
 
-    <section>
-        <p>You have used 815Gb of your storage</p>
-        <div>
-            <progress id="file" value="80" max="100">81.5%</progress>
+    <section class="second-content">
+        <h1>You've used <span class="used-gb">815 GB</span> of your storage</h1>
+            <progress id="file" value="80" max="100" class="progress-bar">81.5%</progress>
+        <div class="progress-container">
             <p>0 GB</p>
             <p>1000 GB</p>
         </div>
-        <div>
-            <p>185 GB left</p>
+        <div class="left-gb">
+            <p><span class="remaining-gb">185</span> GB left</p>
         </div>
     </section>
 </body>
