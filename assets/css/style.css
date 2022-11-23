@@ -1,3 +1,4 @@
+/* Color variables */
 :root {
     --white: #ffffff;
     --paleBlue: hsl(243, 100%, 93%);
@@ -7,51 +8,188 @@
     --black: #000000;
 }
 
+/* General style configuration */
+html {
+    background-image: url('../images/bg-mobile.png');
+    font-family: 'Raleway', sans-serif;   
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-content, .second-content {
+    background-color: var(--darkBlue);
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10% 15% 10% 10%;
+}
+
+.first-content {
+    border-radius: 10px 70px 10px 10px;
+    margin-top: 40%;
+    margin-bottom: 5%;
+}
+
+.second-content {
+    border-radius: 10px;
+    position: relative;
+}
+
+.logo {
+    width: 55%;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.second-content h1 {
+    font-weight: 400;
+    color: var(--paleBlue);
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.used-gb {
+    font-weight: 700;
+}
+
+.progress-bar {
+    background-color: var(--veryDarkBlue);
+    border-radius: 35px;
+    position: relative;
+}
+
+.progress-bar::before {
+    content: '';
+    background: rgb(255, 163, 153);
+    background: -moz-linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
+    border-radius: 35px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.progress-bar::after {
+    content: '';
+    background: white;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.left-gb {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 5%;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--grayishBlue);
+    position: absolute;
+    transform: translate(20%, 10%);
+    display: flex; 
+    gap: .75rem;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;   
+}
+
+.remaining-gb {
+    font-weight: 700;
+    color: var(--black);
+}
+
+.end-sentence {
+    font-weight: 700; 
+}
+
+/* Mobile devices */
 @media (min-width: 320px) {
-    html {
-        background-image: url('../images/bg-mobile.png');
-        font-family: 'Raleway', sans-serif;
-          
-    }
 
-    .body {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .first-content, .second-content {
-        background-color: var(--darkBlue);
-        width: 80%;
-        margin: 0 auto;
-        box-sizing: border-box;
-        padding: 10% 15% 10% 10%;
-    }
-
-    .first-content {
-        border-radius: 10px 70px 10px 10px;
-        margin-top: 40%;
-        margin-bottom: 5%;
-        
-    }
-
-    .second-content {
+    .icons img {
+        margin-right: 10%;
+        width: 15px;
+        background-color: var(--veryDarkBlue);
+        padding: 6%;
         border-radius: 10px;
-        position: relative;
     }
 
-    .logo {
-        padding: 5%;
+    .second-content h1 {
+        font-size: 0.8em;
     }
 
-    .icons {
+    .progress-bar {
+        height: 0.9rem;
+      }
+
+      .progress-bar::before {
+        height: 0.8rem;
+        width: 8rem;
+      }
+
+      .progress-bar::after {
+        height: .65rem;
+        left: 7rem;
+        width: .80rem;
+      }
+      
+      .progress-container {
         display: flex;
-        justify-content: flex-start;
-        margin-top: 10%;
-        margin-bottom: 5%;
-        width: 100%;
-        box-sizing: border-box;
+        justify-content: space-between;
+        padding-top: 5%;
+        padding-bottom: 10%;
+        color: var(--paleBlue);
+        font-weight: 700;
     }
-    
+
+    .progress-container {
+        font-size: 0.8em;
+    }
+
+    .remaining-gb {
+        font-size: 1.5em; 
+    }
+
+    .end-sentence {
+        font-size: 0.6em;
+    }
+}
+
+/* iPads, Tablets */
+@media (min-width: 481px) {
+
+    .second-content h1 {
+        font-size: 1em;
+    }
+
+    .remaining-gb {
+        font-size: 1.5em; 
+    }
+
+    .end-sentence {
+        font-size: 1em;
+    }
+
+    .left-gb {
+        transform: translate(20%, 30%);
+    }
+}
+
+/* Small screens, laptops */
+@media (min-width: 768px) {
+   
     .icons img {
         margin-right: 10%;
         width: 30px;
@@ -61,20 +199,13 @@
     }
 
     .second-content h1 {
-        font-weight: 400;
-        color: var(--paleBlue);
-        text-align: center;
-        padding-bottom: 10%;
-    }
-
-    .used-gb {
-        font-weight: 700;
+        font-size: 1.5em;
     }
 
     .progress-bar {
         background-color: var(--veryDarkBlue);
         border-radius: 35px;
-        height: 1.2rem;
+        height: 1.5rem;
         position: relative;
       }
 
@@ -86,57 +217,29 @@
         background: linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
         border-radius: 35px;
         position: absolute;
-        height: .9rem;
+        height: 1.2rem;
         top: 50%;
         transform: translateY(-50%);
         width: 12.5rem;
       }
 
       .progress-bar::after {
-        content: '';
-        background: white;
-        border-radius: 50%;
         height: .65rem;
-        top: 50%;
-        left: 11.9rem;
+        left: 11.6rem;
         transform: translateY(-50%);
-        width: .65rem;
-        position: absolute;
+        width: .95rem;
       }
       
     .progress-container {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 5%;
-        padding-bottom: 10%;
-        color: var(--paleBlue);
-        font-weight: 700;
+        font-size: 1.3em;
     }
 
     .remaining-gb {
-        font-weight: 700;
-        color: var(--black);
-        font-size: 2em;
+        font-size: 3em; 
     }
-    .left-gb {
-        background-color: var(--white);
-        border-radius: 10px;
-        padding: 10%;
-        width: 50%;
-        margin: 0 auto;
-        text-align: center;
-        color: var(--grayishBlue);
-        position: absolute;
-        transform: translateY(5%);   
+   
+    .end-sentence {
+        font-size: 1.5em;
     }
-
-    .left-gb p {
-        display: flex;
-        gap: .75rem;
-        text-transform: uppercase;
-        justify-content: center;
-        align-items: center;
-        
-    }
-
+    
 }
