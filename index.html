@@ -16,6 +16,7 @@
 <body>
     <section class="first-content">
         <header><img src="assets/images/logo.svg" class="logo"></header>
+
         <div class="icons">
             <img src="assets/images/icon-document.svg">
             <img src="assets/images/icon-folder.svg">
@@ -25,12 +26,14 @@
 
     <section class="second-content">
         <h1>You've used <span class="used-gb">815 GB</span> of your storage</h1>
-        <div class="progress-bar"></div>
-            <!-- <progress id="file" value="80" max="100" class="progress-bar">81.5%</progress> -->
+
+        <progress value="80" min="0" max="100"></progress>
+
         <div class="progress-container">
             <p>0 GB</p>
             <p>1000 GB</p>
         </div>
+
         <div class="left-gb">
             <span class="remaining-gb">185</span>
             <p class="end-sentence">GB left</p>

@@ -6,12 +6,14 @@
     --darkBlue: hsl(228, 56%, 26%);
     --veryDarkBlue: hsl(229, 57%, 11%);
     --black: #000000;
+    --gradient: linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
 }
 
 /* General style configuration */
 html {
     background-image: url('../images/bg-mobile.png');
-    font-family: 'Raleway', sans-serif;   
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;  
 }
 
 .body {
@@ -62,31 +64,30 @@ html {
     font-weight: 700;
 }
 
-.progress-bar {
-    background-color: var(--veryDarkBlue);
-    border-radius: 35px;
-    position: relative;
+/* Progress sets the default style. It removed webkit style sheet (none) add background-color (Firefox will get this background) and defines the value color with accent-color. */
+progress {
+    -webkit-appearance: none;  
+    background: var(--veryDarkBlue); 
+    accent-color: var(--gradient);
+    border-radius: 10px;   
 }
 
-.progress-bar::before {
-    content: '';
-    background: rgb(255, 163, 153);
-    background: -moz-linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
-    background: linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
-    border-radius: 35px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+/* This pseudo class will set the background color for the progress bar to Opera, safari, chrome, edge browsers */
+::-webkit-progress-bar {
+    background: var(--veryDarkBlue);
+    border-radius: 10px;
+} 
+
+/* This pseudo class will set the background color for value to Opera, safari, chrome, edge browsers */
+::-webkit-progress-value {
+    background: var(--gradient);
+    border-radius: 10px;
 }
 
-.progress-bar::after {
-    content: '';
-    background: white;
-    top: 50%;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    position: absolute;
+/* This pseudo class will set the background color for the progress bar on Mozila browser */
+progress::-moz-progress-bar {
+    background: var(--gradient);
+    border-radius: 10px;
 }
 
 .left-gb {
@@ -130,22 +131,12 @@ html {
         font-size: 0.8em;
     }
 
-    .progress-bar {
-        height: 0.9rem;
-      }
-
-      .progress-bar::before {
-        height: 0.8rem;
-        width: 8rem;
-      }
-
-      .progress-bar::after {
-        height: .65rem;
-        left: 7rem;
-        width: .80rem;
-      }
+    progress {
+        height: 15px;
+        width: 200px;
+    }
       
-      .progress-container {
+    .progress-container {
         display: flex;
         justify-content: space-between;
         padding-top: 5%;
@@ -201,34 +192,6 @@ html {
     .second-content h1 {
         font-size: 1.5em;
     }
-
-    .progress-bar {
-        background-color: var(--veryDarkBlue);
-        border-radius: 35px;
-        height: 1.5rem;
-        position: relative;
-      }
-
-      .progress-bar::before {
-        content: '';
-        background: rgb(255, 163, 153);
-        background: -moz-linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
-        background: linear-gradient(90deg, rgba(255, 163, 153, 1) 15%, rgba(255, 77, 151, 1) 100%);
-        border-radius: 35px;
-        position: absolute;
-        height: 1.2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 12.5rem;
-      }
-
-      .progress-bar::after {
-        height: .65rem;
-        left: 11.6rem;
-        transform: translateY(-50%);
-        width: .95rem;
-      }
       
     .progress-container {
         font-size: 1.3em;
