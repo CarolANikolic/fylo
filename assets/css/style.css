@@ -22,11 +22,10 @@ html {
     height: 100vh; 
 }
 
-.test {
+.principal-container {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background: red;
 }
 
 .first-content, .second-content {
@@ -88,14 +87,14 @@ progress {
 
 /* This pseudo class will set the background color for value to Opera, safari, chrome, edge browsers */
 ::-webkit-progress-value {
-    background: var(--gradient);
     border-radius: 10px;
-    background: radial-gradient(4px at 97%,white, white 4px, transparent),linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    /* Add a background for white circle at the edge of value bar (first part defines circle size (4px), position(97%) and color(white). Second part repeats the size and color and defining that everything should be transparent, except the circle. Third part add the lienar gradiant that will ocupy all value where the white was set to transparent, leaving only the circle.*/
+    background: radial-gradient(4px at 97%,white, white 4px, transparent), var(--gradient);
 }
 
 /* This pseudo class will set the background color for the progress bar on Mozila browser */
 progress::-moz-progress-bar {
-    background: var(--gradient);
+    background: radial-gradient(4px at 97%,white, white 4px, transparent),var(--gradient);
     border-radius: 10px;
 }
 
@@ -138,7 +137,7 @@ progress::-moz-progress-bar {
 /* Mobile devices */
 @media (min-width: 320px) and (max-width: 480px) {
 
-    .test {
+    .principal-container {
         width: 80%;
         margin: 20% auto;
     }
@@ -175,7 +174,7 @@ progress::-moz-progress-bar {
 /* iPads, Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
 
-    .test {
+    .principal-container {
         width: 70%;
         margin: 8% auto;
     }
@@ -224,7 +223,7 @@ progress::-moz-progress-bar {
 /* Small screens, laptops */
 @media (min-width: 769px)  {
 
-    .test {
+    .principal-container {
         flex-direction: row;
         width: 80%;
         margin: 15% auto;
@@ -248,8 +247,7 @@ progress::-moz-progress-bar {
     .second-content {
         width: 60%;
         margin-top: 2%;
-        padding-bottom: 3%;
-        
+        padding-bottom: 3%; 
     }
     
     .icons {
@@ -283,5 +281,4 @@ progress::-moz-progress-bar {
     .end-sentence {
         font-size: 1em;
     }
-    
 }
