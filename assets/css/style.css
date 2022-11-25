@@ -12,13 +12,21 @@
 /* General style configuration */
 html {
     background-image: url('../images/bg-mobile.png');
-    font-family: 'Raleway', sans-serif;
-    height: 100vh;  
+    background-size: cover;
+    font-family: 'Raleway', sans-serif; 
 }
 
 .body {
     display: flex;
     flex-direction: column;
+    height: 100vh; 
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: red;
 }
 
 .first-content, .second-content {
@@ -31,7 +39,6 @@ html {
 
 .first-content {
     border-radius: 10px 70px 10px 10px;
-    margin-top: 40%;
     margin-bottom: 5%;
 }
 
@@ -69,7 +76,8 @@ progress {
     -webkit-appearance: none;  
     background: var(--veryDarkBlue); 
     accent-color: var(--gradient);
-    border-radius: 10px;   
+    border-radius: 10px;
+    width: 100%;  
 }
 
 /* This pseudo class will set the background color for the progress bar to Opera, safari, chrome, edge browsers */
@@ -88,6 +96,16 @@ progress {
 progress::-moz-progress-bar {
     background: var(--gradient);
     border-radius: 10px;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: var(--paleBlue);
+    font-weight: 700;
+    box-sizing: border-box;
 }
 
 .left-gb {
@@ -117,7 +135,12 @@ progress::-moz-progress-bar {
 }
 
 /* Mobile devices */
-@media (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .test {
+        width: 80%;
+        margin: 20% auto;
+    }
 
     .icons img {
         margin-right: 10%;
@@ -133,76 +156,127 @@ progress::-moz-progress-bar {
 
     progress {
         height: 15px;
-        width: 200px;
     }
       
     .progress-container {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 5%;
-        padding-bottom: 10%;
-        color: var(--paleBlue);
-        font-weight: 700;
+        font-size: 0.8em;
+    }
+        
+    .remaining-gb {
+        font-size: 1em; 
     }
 
+    .end-sentence {
+        font-size: 0.6em;
+    } 
+}
+
+/* iPads, Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .test {
+        width: 70%;
+        margin: 8% auto;
+    }
+
+    .first-content {
+        margin-bottom: 2%;
+    }
+
+    .icons img {
+        margin-right: 10%;
+        width: 15px;
+        background-color: var(--veryDarkBlue);
+        padding: 6%;
+        border-radius: 10px;
+    }
+
+    .first-content {
+        padding-bottom: 5%;
+    }
+
+    .second-content h1 {
+        font-size: 1em;
+    }
+
+    progress {
+        height: 15px;
+    }
+      
+    .progress-container {
+        font-size: 0.8em;
+    }
+
+    .left-gb {
+        transform: translate(20%, 10%);
+    }
+
+    .remaining-gb {
+        font-size: 1.5em; 
+    }
+
+    .end-sentence {
+        font-size: 0.8em;
+    }
+}
+
+/* Small screens, laptops */
+@media (min-width: 769px)  {
+
+    .test {
+        flex-direction: row;
+        width: 80%;
+        margin: 15% auto;
+        vertical-align: middle;
+        vertical-align: bottom;
+    }
+
+    .first-content, .second-content {
+        box-sizing: border-box;
+        padding: 5%;
+        margin: 0 auto;
+        height: 40%; 
+    }
+    
+    .first-content {
+        padding: 5% ;
+        width: 35%;
+        margin-top: auto;
+    }
+
+    .second-content {
+        width: 60%;
+        margin-top: 2%;
+        padding-bottom: 3%;
+        
+    }
+    
+    .icons {
+        padding-right: 20%;
+    }
+
+    .icons img {
+        margin-right: 10%; 
+        width: 20px;
+        background-color: var(--veryDarkBlue);
+        padding: 8%;
+        border-radius: 10px;
+    }
+
+    .second-content h1 {
+        font-size: 1em;
+    }
+ 
     .progress-container {
         font-size: 0.8em;
     }
 
     .remaining-gb {
-        font-size: 1.5em; 
-    }
-
-    .end-sentence {
-        font-size: 0.6em;
-    }
-}
-
-/* iPads, Tablets */
-@media (min-width: 481px) {
-
-    .second-content h1 {
-        font-size: 1em;
-    }
-
-    .remaining-gb {
-        font-size: 1.5em; 
-    }
-
-    .end-sentence {
-        font-size: 1em;
-    }
-
-    .left-gb {
-        transform: translate(20%, 30%);
-    }
-}
-
-/* Small screens, laptops */
-@media (min-width: 768px) {
-   
-    .icons img {
-        margin-right: 10%;
-        width: 30px;
-        background-color: var(--veryDarkBlue);
-        padding: 5%;
-        border-radius: 10px;
-    }
-
-    .second-content h1 {
-        font-size: 1.5em;
-    }
-      
-    .progress-container {
-        font-size: 1.3em;
-    }
-
-    .remaining-gb {
-        font-size: 3em; 
+        font-size: 2em; 
     }
    
     .end-sentence {
-        font-size: 1.5em;
+        font-size: 1em;
     }
     
 }
