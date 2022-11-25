@@ -11,7 +11,7 @@
 
 /* General style configuration */
 html {
-    background-image: url('../images/bg-mobile.png');
+    background-image: url('../images/background.png');
     background-size: cover;
     font-family: 'Raleway', sans-serif; 
 }
