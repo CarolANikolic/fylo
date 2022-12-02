@@ -2,7 +2,7 @@
 
 <img src="assets/images/screenshots/fylo-desktop.png" alt="fylo desktop view">
 
-Fylo is a data storage component to display the information about the the status of used and remaining storage space. This is a challenge project from Frontend Mentor so I can test my HTML and CSS abilities.
+Fylo is a data storage component that displays the information about the status of used and remaining storage space. This is a challenge project from Frontend Mentor so I can test my HTML and CSS abilities.
 
 ## Technologies used :hammer_and_wrench:
 - [HTML5](https://html.com)
