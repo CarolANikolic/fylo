@@ -18,7 +18,7 @@ To work with the code, you will need, before you begin, to install in your machi
 
 ----
 
-<img src="assets/images/screenshots/fylo.gif" width=80% alt="fylo responsive layout git">
+<img src="assets/images/screenshots/fylo.gif" width=80% alt="fylo responsive layout gif">
 
 #### Check it out:  fylo-storage-project.netlify.app
 #### Project based on challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n).
